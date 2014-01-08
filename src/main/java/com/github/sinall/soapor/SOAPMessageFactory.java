@@ -40,6 +40,7 @@ public class SOAPMessageFactory {
         } finally {
             IOUtils.closeQuietly(inputStream);
         }
+
         return content;
     }
 }

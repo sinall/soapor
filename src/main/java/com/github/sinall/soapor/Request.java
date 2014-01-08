@@ -5,8 +5,12 @@ import org.apache.commons.beanutils.BeanUtils;
 import java.util.Map;
 
 public class Request {
-    private final String payloadName;
-    private final Map params;
+    private String payloadName;
+    private Map params;
+
+    public Request(String payloadName) {
+        this(payloadName, new Object());
+    }
 
     public Request(String payloadName, Map params) {
         this.payloadName = payloadName;

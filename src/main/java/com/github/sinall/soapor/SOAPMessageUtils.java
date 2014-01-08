@@ -20,7 +20,7 @@ import java.io.InputStream;
 import java.io.StringWriter;
 
 public class SOAPMessageUtils {
-    public static String toString(SOAPMessage soapMessage) {
+    public static String toXML(SOAPMessage soapMessage) {
         String content;
         try {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
@@ -36,39 +36,7 @@ public class SOAPMessageUtils {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+
         return content;
-    }
-
-    public static String getValueByXPath(String xpathText, SOAPElement soapElement) {
-        Document doc = toDoc(soapElement);
-        XPath xpath = XPathFactory.newInstance().newXPath();
-        try {
-            String value = xpath.compile(xpathText).evaluate(doc);
-            return value;
-        } catch (XPathExpressionException e) {
-            return null;
-        }
-    }
-
-    public static Document toDoc(SOAPElement soapElement) {
-        Document doc;
-        InputStream inputStream = null;
-        try {
-            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-            factory.setNamespaceAware(false);
-            TransformerFactory transformerFactory = TransformerFactory.newInstance();
-            Transformer transformer = transformerFactory.newTransformer();
-            StringWriter strWriter = new StringWriter();
-            transformer.transform(new DOMSource(soapElement), new StreamResult(strWriter));
-            String content = strWriter.toString();
-            inputStream = new ByteArrayInputStream(content.getBytes());
-            doc = factory.newDocumentBuilder().parse(inputStream);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        } finally {
-            IOUtils.closeQuietly(inputStream);
-        }
-
-        return doc;
     }
 }

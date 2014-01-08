@@ -8,7 +8,7 @@
     <SOAP-ENV:Body>
         <ns1:doubleAnInteger
                 xmlns:ns1="urn:MySoapServices">
-            <param1 xsi:type="xsd:int">123</param1>
+            <param1 xsi:type="xsd:int">${param1}</param1>
         </ns1:doubleAnInteger>
     </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>

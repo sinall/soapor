@@ -13,7 +13,7 @@
     <artifactId>soapor</artifactId>
     <packaging>jar</packaging>
     <name>soapor</name>
-    <version>1.0.0</version>
+    <version>1.0.0-SNAPSHOT</version>
     <description>SOAPor is a lightweight java SOAP Client for Web Service automation testing.</description>
     <url>https://github.com/sinall/soapor</url>
     <licenses>

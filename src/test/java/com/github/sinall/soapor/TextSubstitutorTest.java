@@ -1,5 +1,6 @@
 package com.github.sinall.soapor;
 
+import com.github.sinall.soapor.util.TextSubstitutor;
 import org.junit.Test;
 
 import java.util.HashMap;

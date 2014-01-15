@@ -1,5 +1,6 @@
-package com.github.sinall.soapor;
+package com.github.sinall.soapor.util;
 
+import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.io.Charsets;
 import org.apache.commons.io.IOUtils;
 
@@ -10,11 +11,27 @@ import javax.xml.soap.SOAPMessage;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
 
 public class SOAPMessageFactory {
-    public static SOAPMessage create(Request request) throws SOAPException {
-        String content = load(request.getPayloadName());
-        content = new TextSubstitutor().substitute(content, request.getParams());
+
+    public static SOAPMessage create(String payloadName) throws SOAPException {
+        return create(payloadName, new HashMap());
+    }
+
+    public static SOAPMessage create(String payloadName, Object obj) throws SOAPException {
+        try {
+            Map params = BeanUtils.describe(obj);
+            return create(payloadName, params);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static SOAPMessage create(String payloadName, Map params) throws SOAPException {
+        String content = load(payloadName);
+        content = new TextSubstitutor().substitute(content, params);
 
         MessageFactory messageFactory = MessageFactory.newInstance();
         ByteArrayInputStream inputStream = null;

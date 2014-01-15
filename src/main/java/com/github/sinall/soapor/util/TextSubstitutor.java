@@ -1,4 +1,4 @@
-package com.github.sinall.soapor;
+package com.github.sinall.soapor.util;
 
 import java.util.Map;
 

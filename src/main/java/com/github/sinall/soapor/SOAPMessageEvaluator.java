@@ -1,5 +1,6 @@
 package com.github.sinall.soapor;
 
+import com.github.sinall.soapor.util.DOMUtils;
 import org.w3c.dom.Document;
 
 import javax.xml.soap.SOAPMessage;

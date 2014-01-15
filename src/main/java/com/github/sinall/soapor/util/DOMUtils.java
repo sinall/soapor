@@ -1,4 +1,4 @@
-package com.github.sinall.soapor;
+package com.github.sinall.soapor.util;
 
 import org.apache.commons.io.IOUtils;
 import org.w3c.dom.Document;

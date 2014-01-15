@@ -6,17 +6,17 @@ import javax.xml.soap.SOAPException;
 import javax.xml.soap.SOAPMessage;
 
 public class SOAPClient {
-    private String endpoint;
-    private SOAPConnection soapConnection;
+    private final String endpoint;
+    private final SOAPConnection soapConnection;
 
     public SOAPClient(String endpoint) throws SOAPException {
+        this.endpoint = endpoint;
         SOAPConnectionFactory soapConnectionFactory = SOAPConnectionFactory.newInstance();
         soapConnection = soapConnectionFactory.createConnection();
     }
 
-    public SOAPMessage send(Request request) throws SOAPException {
-        SOAPMessage requestMessage = SOAPMessageFactory.create(request);
-        SOAPMessage responseMessage = soapConnection.call(requestMessage, endpoint);
-        return responseMessage;
+    public SOAPResponse send(SOAPRequest request) throws SOAPException {
+        SOAPMessage responseMessage = soapConnection.call(request.getSOAPMessage(), endpoint);
+        return new SOAPResponse(responseMessage);
     }
 }

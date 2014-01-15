@@ -24,9 +24,9 @@
         </license>
     </licenses>
     <scm>
-        <url>https://github.com/sinall/soapor</url>
-        <connection>scm:git:https://github.com/sinall/soapor.git</connection>
-        <developerConnection>scm:git:https://github.com/sinall/soapor.git</developerConnection>
+        <connection>scm:git:git@github.com:sinall/soapor.git</connection>
+        <developerConnection>scm:git:git@github.com:sinall/soapor.git</developerConnection>
+        <url>git@github.com:sinall/soapor.git</url>
     </scm>
     <developers>
         <developer>

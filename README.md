@@ -21,7 +21,9 @@ SOAPor is a java SOAP client.
 </dependency>
 ```
 
-#### Basic usage:
+#### Usage:
+
+##### Basic usage:
 
 ```java
 import com.github.sinall.soapor.*;
@@ -34,4 +36,11 @@ log.info("Request soap message to {}:\n{}", endpoint, request);
 SOAPClient client = new SOAPClient(endpoint);
 SOAPResponse response = client.send(request);
 log.info("Response soap message:\n{}", response);
+```
+
+##### Matcher:
+
+```java
+SOAPMessage soapMessage = SOAPMessageFactory.create("com/github/sinall/soapor/payload/example.xml");
+assertThat(soapMessage, hasValueInXPath("/Envelope/Body/doubleAnInteger/param1", "123"));
 ```

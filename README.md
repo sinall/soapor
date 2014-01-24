@@ -17,7 +17,7 @@ SOAPor is a java SOAP client.
 <dependency>
     <groupId>com.github.sinall</groupId>
     <artifactId>soapor</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
 </dependency>
 ```
 

@@ -16,7 +16,13 @@ SOAPor is a java SOAP client.
 ```xml
 <dependency>
     <groupId>com.github.sinall</groupId>
-    <artifactId>soapor</artifactId>
+    <artifactId>soapor-core</artifactId>
+    <version>1.0.2</version>
+</dependency>
+
+<dependency>
+    <groupId>com.github.sinall</groupId>
+    <artifactId>soapor-matchers</artifactId>
     <version>1.0.2</version>
 </dependency>
 ```

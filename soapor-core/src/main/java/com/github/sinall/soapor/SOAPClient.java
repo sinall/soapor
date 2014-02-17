@@ -19,4 +19,8 @@ public class SOAPClient {
         SOAPMessage responseMessage = soapConnection.call(request.getSOAPMessage(), endpoint);
         return new SOAPResponse(responseMessage);
     }
+
+	public String getEndPoint() {
+		return endpoint;
+	}
 }

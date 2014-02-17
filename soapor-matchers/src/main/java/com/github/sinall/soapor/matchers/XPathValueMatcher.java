@@ -26,7 +26,6 @@ public class XPathValueMatcher<T> extends TypeSafeMatcher<SOAPMessage> {
         return ObjectUtils.equals(expectedValue.toString(), actualValue);
     }
 
-    @Override
     public void describeTo(Description description) {
         description.appendText(MessageFormat.format("contain \"{0}\" in XPath \"{1}\"", expectedValue, xpath));
     }

@@ -15,7 +15,7 @@ public class SOAPMessageFactoryTest {
     @Test
     public void should_create_SOAPMessage_from_request() throws SOAPException {
         String payloadName = "com/github/sinall/soapor/payload/example.xml";
-        Map<String, String> params = new HashMap<String, String>();
+        Map<String, Object> params = new HashMap<String, Object>();
         params.put("param1", "123");
 
         SOAPMessage soapMessage = SOAPMessageFactory.create(payloadName, params);

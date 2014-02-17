@@ -1,13 +1,14 @@
 package com.github.sinall.soapor.matchers;
 
-import com.github.sinall.soapor.util.SOAPMessageFactory;
-import org.junit.Test;
+import static com.github.sinall.soapor.matchers.SOAPMessageMatchers.hasValueInXPath;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 import javax.xml.soap.SOAPException;
 import javax.xml.soap.SOAPMessage;
 
-import static com.github.sinall.soapor.matchers.SOAPMessageMatchers.hasValueInXPath;
-import static org.hamcrest.MatcherAssert.assertThat;
+import org.junit.Test;
+
+import com.github.sinall.soapor.util.SOAPMessageFactory;
 
 public class SOAPMessageMatchersTest {
     @Test

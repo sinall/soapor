@@ -17,19 +17,20 @@ import java.util.Map;
 public class SOAPMessageFactory {
 
     public static SOAPMessage create(String payloadName) throws SOAPException {
-        return create(payloadName, new HashMap());
+        return create(payloadName, new HashMap<String, Object>());
     }
 
     public static SOAPMessage create(String payloadName, Object obj) throws SOAPException {
         try {
-            Map params = BeanUtils.describe(obj);
+            Map<String, String> params = BeanUtils.describe(obj);
             return create(payloadName, params);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
 
-    public static SOAPMessage create(String payloadName, Map params) throws SOAPException {
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+	public static SOAPMessage create(String payloadName, Map params) throws SOAPException {
         String content = load(payloadName);
         content = new TextSubstitutor().substitute(content, params);
 

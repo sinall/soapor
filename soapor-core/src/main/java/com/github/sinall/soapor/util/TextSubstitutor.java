@@ -2,6 +2,7 @@ package com.github.sinall.soapor.util;
 
 import java.util.Map;
 
+@Deprecated
 public class TextSubstitutor {
     public String substitute(String content, Map<String, Object> params) {
         for (Map.Entry<String, Object> param : params.entrySet()) {

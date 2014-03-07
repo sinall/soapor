@@ -27,9 +27,9 @@ public class SOAPMessageEvaluator {
             throw new RuntimeException(e);
         }
     }
-    
+
     public Object evaluate(String xpathText, QName qname) {
-    	try {
+        try {
             Object value = xpath.compile(xpathText).evaluate(doc, qname);
             return value;
         } catch (XPathExpressionException e) {

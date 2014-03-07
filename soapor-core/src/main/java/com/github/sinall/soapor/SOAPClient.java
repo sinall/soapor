@@ -20,7 +20,7 @@ public class SOAPClient {
         return new SOAPResponse(responseMessage);
     }
 
-	public String getEndPoint() {
-		return endpoint;
-	}
+    public String getEndPoint() {
+        return endpoint;
+    }
 }

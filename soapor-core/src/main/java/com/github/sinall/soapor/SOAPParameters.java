@@ -12,6 +12,13 @@ public class SOAPParameters {
         return this;
     }
 
+    public SOAPParameters putAll(Map<String, Object> params) {
+        for (Map.Entry<String, Object> entry : params.entrySet()) {
+            put(entry.getKey(), entry.getValue());
+        }
+        return this;
+    }
+
     public Map<String, Object> getMap() {
         return params;
     }

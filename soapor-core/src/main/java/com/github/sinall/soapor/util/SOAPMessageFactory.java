@@ -37,20 +37,10 @@ public class SOAPMessageFactory {
     @Deprecated
     @SuppressWarnings({"rawtypes", "unchecked"})
     public static SOAPMessage create(String payloadName, Map params) throws SOAPException {
-        String content = loadTemplate(payloadName);
-        content = new TextSubstitutor().substitute(content, params);
+        SOAPParameters parameters = new SOAPParameters();
+        parameters.putAll(params);
 
-        MessageFactory messageFactory = MessageFactory.newInstance();
-        ByteArrayInputStream inputStream = null;
-        try {
-            inputStream = new ByteArrayInputStream(content.getBytes(Charsets.UTF_8));
-            SOAPMessage soapMessage = messageFactory.createMessage(new MimeHeaders(), inputStream);
-            return soapMessage;
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } finally {
-            IOUtils.closeQuietly(inputStream);
-        }
+        return create(payloadName, parameters);
     }
 
     public static SOAPMessage create(String payloadName, SOAPParameters context) throws SOAPException {

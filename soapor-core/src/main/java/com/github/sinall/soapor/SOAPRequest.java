@@ -15,10 +15,16 @@ public class SOAPRequest {
         return new SOAPRequest(SOAPMessageFactory.create(payloadName, new HashMap<String, Object>()));
     }
 
+    public static SOAPRequest getInstance(String payloadName, SOAPParameters params) throws SOAPException {
+        return new SOAPRequest(SOAPMessageFactory.create(payloadName, params));
+    }
+
+    @Deprecated
     public static SOAPRequest getInstance(String payloadName, Map<String, Object> params) throws SOAPException {
         return new SOAPRequest(SOAPMessageFactory.create(payloadName, params));
     }
 
+    @Deprecated
     public static SOAPRequest getInstance(String payloadName, Object obj) throws SOAPException {
         return new SOAPRequest(SOAPMessageFactory.create(payloadName, obj));
     }

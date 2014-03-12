@@ -12,4 +12,11 @@
     <packaging>jar</packaging>
     <name>soapor-core</name>
     <description>The core functionality of SOAPor.</description>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity</artifactId>
+            <version>1.7</version>
+        </dependency>
+    </dependencies>
 </project>

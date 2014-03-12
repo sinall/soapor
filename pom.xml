@@ -54,11 +54,6 @@
             <version>4.10</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.apache.velocity</groupId>
-            <artifactId>velocity</artifactId>
-            <version>1.7</version>
-        </dependency>
     </dependencies>
     <!--
     AVOID RELEASE REPOSITORY/PLUGINREPOSITORY:

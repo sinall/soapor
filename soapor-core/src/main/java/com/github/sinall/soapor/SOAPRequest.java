@@ -12,7 +12,7 @@ public class SOAPRequest {
     private final SOAPMessage soapMessage;
 
     public static SOAPRequest getInstance(String payloadName) throws SOAPException {
-        return new SOAPRequest(SOAPMessageFactory.create(payloadName, new HashMap<String, Object>()));
+        return new SOAPRequest(SOAPMessageFactory.create(payloadName, new SOAPParameters()));
     }
 
     public static SOAPRequest getInstance(String payloadName, SOAPParameters params) throws SOAPException {
@@ -20,7 +20,7 @@ public class SOAPRequest {
     }
 
     @Deprecated
-    public static SOAPRequest getInstance(String payloadName, Map<String, Object> params) throws SOAPException {
+    public static SOAPRequest getInstance(String payloadName, Map<String, ? extends Object> params) throws SOAPException {
         return new SOAPRequest(SOAPMessageFactory.create(payloadName, params));
     }
 

@@ -12,8 +12,8 @@ public class SOAPParameters {
         return this;
     }
 
-    public SOAPParameters putAll(Map<String, Object> params) {
-        for (Map.Entry<String, Object> entry : params.entrySet()) {
+    public SOAPParameters putAll(Map<String, ? extends Object> params) {
+        for (Map.Entry<String, ? extends Object> entry : params.entrySet()) {
             put(entry.getKey(), entry.getValue());
         }
         return this;

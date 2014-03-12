@@ -35,8 +35,7 @@ public class SOAPMessageFactory {
     }
 
     @Deprecated
-    @SuppressWarnings({"rawtypes", "unchecked"})
-    public static SOAPMessage create(String payloadName, Map params) throws SOAPException {
+    public static SOAPMessage create(String payloadName, Map<String, ? extends Object> params) throws SOAPException {
         SOAPParameters parameters = new SOAPParameters();
         parameters.putAll(params);
 

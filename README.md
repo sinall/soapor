@@ -3,6 +3,8 @@ soapor
 
 SOAPor is a java SOAP client.
 
+[![Build Status](https://travis-ci.org/sinall/soapor.png?branch=master)](https://travis-ci.org/sinall/soapor)
+
 ## <a name="goals"/>Features
 
 * Build a payload based on template and a map

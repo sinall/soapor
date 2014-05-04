@@ -19,13 +19,13 @@ SOAPor is a java SOAP client.
 <dependency>
     <groupId>com.github.sinall</groupId>
     <artifactId>soapor-core</artifactId>
-    <version>1.0.2</version>
+    <version>1.1.3</version>
 </dependency>
 
 <dependency>
     <groupId>com.github.sinall</groupId>
     <artifactId>soapor-matchers</artifactId>
-    <version>1.0.2</version>
+    <version>1.1.3</version>
 </dependency>
 ```
 
@@ -36,7 +36,7 @@ SOAPor is a java SOAP client.
 ```java
 import com.github.sinall.soapor.*;
 // ...
-Map<String, String> params = new HashMap<String, String>();
+SOAPParameters params = new SOAPParameters();
 params.put("param1", "123");
 SOAPRequest request = SOAPRequest.getInstance("com/github/sinall/soapor/payload/example.xml", params);
 log.info("Request soap message to {}:\n{}", endpoint, request);
